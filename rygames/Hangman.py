@@ -207,8 +207,7 @@ def __getWordFromList__():
     word = word.lower()
     return(word)
 
-def play():
-    dictionary = PyDictionary()
+def Hangman():
     global letters
     global word
     global guesses
@@ -255,7 +254,8 @@ def play():
             winOrLose = True
 
     __lifeCounter__(livesUsed)
-    print(str(word) + "   " + dictionary.meaning(word) + '\n')
+    dictionary = PyDictionary(word)
+    print(dictionary.printMeanings() + '\n')
     if winOrLose == True:
         print('You Win!')
     else:
